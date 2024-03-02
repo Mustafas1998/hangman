@@ -3,7 +3,7 @@ let list = ['ELEPHANT','DOG','LION','PYTHON','RABBIT','FISH','MONKEY','TIGER','B
 let max_guesses = 6;
 let letters_guessed = [];
 
-//random-word
+//random-word-section
 function random_word()
 {
     word = list[Math.floor(Math.random()*list.length)]
@@ -12,7 +12,7 @@ function random_word()
 random_word();
 
 
-//display-word-section
+//display-dashes-section
 function display_dashes_section()
 {
     let dashes = "";
@@ -24,7 +24,7 @@ function display_dashes_section()
     
 }
 
-// checking the letter section
+// checking_the_letter_section
 function checker(choice)
 {
     if (word.includes(choice) && choice===word[id])
@@ -41,7 +41,7 @@ function checker(choice)
 
 
 
-//event-listner for  letters
+//event_listner_for_letters
 let letter_clicks = document.querySelectorAll(".letter");
 for(let l of letter_clicks){
 
@@ -51,7 +51,7 @@ for(let l of letter_clicks){
         {
             letters_guessed.push(l.innerHTML)
             checker(l.innerHTML)
-            alert("This letter is in this word!")
+            
             
         } else {
             alert(`GAMEOVER.Word is ${word}`)
@@ -61,3 +61,25 @@ for(let l of letter_clicks){
 };
 
 display_dashes_section();
+
+//hangman_update
+function hang_update(){
+    if(max_guesses===5){
+        head()
+    }
+    if(max_guesses===4){
+        body()
+    }
+    if(max_guesses===3){
+        leftHand()
+    }
+    if(max_guesses===2){
+        rightHand()
+    }
+    if(max_guesses===1){
+        leftLeg()
+    }
+    if(max_guesses===0){
+        rightLeg()
+    }
+}
