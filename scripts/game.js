@@ -27,9 +27,9 @@ function display_dashes_section()
 // checking_the_letter_section
 function checker(choice)
 {
-    if (word.includes(choice) && choice===word[id])
+    if (word.includes(choice))
     {
-        dashes[i*2] = choice
+        choice.replace(letters_guessed)
         
     }else
     {    
@@ -55,7 +55,7 @@ for(let l of letter_clicks){
             
         } else {
             alert(`GAMEOVER.Word is ${word}`)
-            alert("clicks=0")
+            
         }  
     });
 };
